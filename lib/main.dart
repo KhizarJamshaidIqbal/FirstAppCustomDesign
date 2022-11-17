@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:static_api/View/Authentication.dart';
 
 import 'View/LoginScreen.dart';
+import 'View/components/BottomNavigationbar.dart';
 import 'View/shared/SplashScreen.dart';
 
 void main() {
