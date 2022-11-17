@@ -58,9 +58,13 @@ class _HomeState extends State<Home> {
                           image: AssetImage("Images/KSocial.png"),
                         ),
                       ),
-                      Icon(Icons.message_outlined)
+                      Icon(Icons.message_outlined),
                     ],
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5),
+                  child: Container(height: 0.1, color: Colors.black),
                 ),
                 SizedBox(
                   height: 110.0,
@@ -89,6 +93,10 @@ class _HomeState extends State<Home> {
                           );
                         }),
                   ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 5, top: 5),
+                  child: Container(height: 0.1, color: Colors.black),
                 ),
                 Expanded(
                   child: ListView.builder(
