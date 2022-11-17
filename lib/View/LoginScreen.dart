@@ -6,6 +6,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
 import 'package:static_api/View/Authentication.dart';
+import 'package:static_api/View/shared/Forgot_Password.dart';
+import 'package:static_api/View/shared/Home.dart';
 
 import '../api/card_api.dart';
 import 'SignUpScreen.dart';
@@ -61,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 85.0),
               child: Container(
-                height: Height,
+                height: Height / 1.15,
                 width: Width,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -71,167 +73,163 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SingleChildScrollView(
-              child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 140.0, left: 30.0, right: 30.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Welcome!",
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30.0),
-                      ),
-                      SizedBox(
-                        height: 6.0,
-                      ),
-                      Text(
-                        "Sign in to continue",
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            color: Color.fromARGB(255, 235, 126, 126)),
-                      ),
-                      SizedBox(
-                        height: Height * .09,
-                      ),
-                      customtextfield(
-                          controller: _emailController,
-                          hintText: "Enter Email Adress",
-                          labelText: "Email"),
-                      SizedBox(
-                        height: 12.0,
-                      ),
-                      customtextfield(
-                          controller: _passwordController,
-                          hintText: "password",
-                          labelText: "password"),
-                      SizedBox(
-                        height: 50.0,
-                      ),
-                      SizedBox(
-                        width: Width * 0.88,
-                        height: Height * 0.2 / 3,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Authentication(),
-                                ));
-                          },
-                          child: Text(
-                            "Login",
-                            style: TextStyle(
-                                fontSize: 28, fontWeight: FontWeight.bold),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                              elevation: 5,
-                              shadowColor: Colors.redAccent,
-                              primary: Colors.red,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12.0))),
+            Padding(
+                padding:
+                    const EdgeInsets.only(top: 140.0, left: 30.0, right: 30.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Welcome!",
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 30.0),
+                    ),
+                    SizedBox(
+                      height: 6.0,
+                    ),
+                    Text(
+                      "Sign in to continue",
+                      style: TextStyle(
+                          fontSize: 15.0,
+                          color: Color.fromARGB(255, 235, 126, 126)),
+                    ),
+                    SizedBox(
+                      height: Height * .09,
+                    ),
+                    customtextfield(
+                        controller: _emailController,
+                        hintText: "Enter Email Adress",
+                        labelText: "Email"),
+                    SizedBox(
+                      height: 12.0,
+                    ),
+                    customtextfield(
+                        controller: _passwordController,
+                        hintText: "password",
+                        labelText: "password"),
+                    SizedBox(
+                      height: 50.0,
+                    ),
+                    SizedBox(
+                      width: Width * 0.88,
+                      height: Height * 0.2 / 3,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Home(),
+                              ));
+                        },
+                        child: Text(
+                          "Login",
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
                         ),
+                        style: ElevatedButton.styleFrom(
+                            elevation: 5,
+                            shadowColor: Colors.redAccent,
+                            primary: Colors.red,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(12.0))),
                       ),
-                      Align(
-                          alignment: Alignment.center,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SignUpScreen(),
-                                    ));
-                              },
-                              child: Text(
-                                "Forgot Password?",
-                                style: TextStyle(color: Colors.black),
-                              ))),
-                      SizedBox(
-                        height: Height * 0.02,
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            width: Width * .38,
-                            height: .5,
-                            color: Colors.black,
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.only(left: 5.0, right: 5.0),
+                    ),
+                    Align(
+                        alignment: Alignment.center,
+                        child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Forgot_Password(),
+                                  ));
+                            },
                             child: Text(
-                              "Or",
-                              style:
-                                  TextStyle(color: Colors.red, fontSize: 15.0),
-                            ),
+                              "Forgot Password?",
+                              style: TextStyle(color: Colors.black),
+                            ))),
+                    SizedBox(
+                      height: Height * 0.02,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          width: Width * .38,
+                          height: .5,
+                          color: Colors.black,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                          child: Text(
+                            "Or",
+                            style: TextStyle(color: Colors.red, fontSize: 15.0),
                           ),
-                          Container(
-                            width: Width * .38,
-                            height: 0.5,
-                            color: Colors.black,
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: Height * 0.04,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
-                            child: CircleAvatar(
-                              child:
-                                  Image(image: AssetImage("Images/google.png")),
-                              radius: 25.0,
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 20.0),
-                            child: CircleAvatar(
-                              child: Image(
-                                  image: AssetImage("Images/twitter.png")),
-                              radius: 25.0,
-                              backgroundColor: Colors.white,
-                            ),
-                          ),
-                          CircleAvatar(
+                        ),
+                        Container(
+                          width: Width * .38,
+                          height: 0.5,
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Height * 0.04,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20.0),
+                          child: CircleAvatar(
                             child:
-                                Image(image: AssetImage("Images/facebook.png")),
+                                Image(image: AssetImage("Images/google.png")),
                             radius: 25.0,
                             backgroundColor: Colors.white,
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: Height * .08,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                                fontSize: 15.0, color: Colors.redAccent),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 20.0),
+                          child: CircleAvatar(
+                            child:
+                                Image(image: AssetImage("Images/twitter.png")),
+                            radius: 25.0,
+                            backgroundColor: Colors.white,
                           ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SignUpScreen(),
-                                    ));
-                              },
-                              child: Text("Sign up"))
-                        ],
-                      ),
-                    ],
-                  )),
-            )
+                        ),
+                        CircleAvatar(
+                          child:
+                              Image(image: AssetImage("Images/facebook.png")),
+                          radius: 25.0,
+                          backgroundColor: Colors.white,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Height * .08,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don't have an account?",
+                          style: TextStyle(
+                              fontSize: 15.0, color: Colors.redAccent),
+                        ),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignUpScreen(),
+                                  ));
+                            },
+                            child: Text("Sign up"))
+                      ],
+                    ),
+                  ],
+                ))
           ],
         ),
       )),

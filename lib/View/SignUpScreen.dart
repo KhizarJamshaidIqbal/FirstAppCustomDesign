@@ -63,7 +63,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 85.0),
               child: Container(
-                height: Height,
+                height: Height / 2,
                 width: Width,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -120,7 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     customtextfield(
                         controller: _passwordController,
-                        hintText: "Enter New password",
+                        hintText: "Must use special characters",
                         labelText: "Enter New password"),
                     SizedBox(
                       height: 12.0,

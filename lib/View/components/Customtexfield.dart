@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, unnecessary_import, implementation_imports, unused_import, file_names
+// ignore_for_file: prefer_const_constructors, camel_case_types, unnecessary_import, implementation_imports, unused_import, file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -9,7 +9,7 @@ class customtextfield extends StatelessWidget {
   String hintText;
   String labelText;
 
-   customtextfield(
+  customtextfield(
       {super.key,
       required this.controller,
       required this.hintText,

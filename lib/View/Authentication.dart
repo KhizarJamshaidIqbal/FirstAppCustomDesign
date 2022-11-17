@@ -25,23 +25,19 @@ class _AuthenticationState extends State<Authentication> {
     var Width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.red,
         body: Stack(
           clipBehavior: Clip.none,
           children: [
-            Container(
-              height: Height * 0.2,
-              width: Width,
-              color: Colors.red,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 28.0, left: 70.0),
-                child: Text(
-                  "Authentication",
-                  style: TextStyle(
-                      fontSize: 35.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontFamily: 'Raleway'),
-                ),
+            Padding(
+              padding: const EdgeInsets.only(top: 28.0, left: 70.0),
+              child: Text(
+                "Authentication",
+                style: TextStyle(
+                    fontSize: 35.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontFamily: 'Raleway'),
               ),
             ),
             Padding(
@@ -120,12 +116,11 @@ class _AuthenticationState extends State<Authentication> {
                                       borderRadius:
                                           BorderRadius.circular(12.0))),
                               onPressed: () {
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const LoginScreen()),
-                                );
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => LoginScreen(),
+                                    ));
                               },
                               child: Text(
                                 "Login",
@@ -141,11 +136,11 @@ class _AuthenticationState extends State<Authentication> {
                           height: Height * 0.2 / 3,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignUpScreen()),
-                              );
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SignUpScreen(),
+                                  ));
                             },
                             child: Text(
                               "SignUp",
