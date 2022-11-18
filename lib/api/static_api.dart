@@ -39,6 +39,9 @@ class Photos_Api {
             "https://dummyjson.com/image/i/products/2/1.jpg",
             "https://dummyjson.com/image/i/products/2/2.jpg",
             "https://dummyjson.com/image/i/products/2/3.jpg",
+            "https://dummyjson.com/image/i/products/1/2.jpg",
+            "https://dummyjson.com/image/i/products/1/3.jpg",
+            "https://dummyjson.com/image/i/products/1/4.jpg",
             "https://dummyjson.com/image/i/products/2/thumbnail.jpg"
           ]
         },
@@ -54,7 +57,12 @@ class Photos_Api {
           "brand": "Samsung",
           "category": "smartphones",
           "thumbnail": "https://dummyjson.com/image/i/products/3/thumbnail.jpg",
-          "images": ["https://dummyjson.com/image/i/products/3/1.jpg"]
+          "images": [
+            "https://dummyjson.com/image/i/products/3/1.jpg",
+            "https://dummyjson.com/image/i/products/1/2.jpg",
+            "https://dummyjson.com/image/i/products/1/3.jpg",
+            "https://dummyjson.com/image/i/products/1/4.jpg",
+          ]
         },
         {
           "id": 4,
@@ -413,6 +421,9 @@ class Photos_Api {
           "images": [
             "https://dummyjson.com/image/i/products/21/1.png",
             "https://dummyjson.com/image/i/products/21/2.jpg",
+            "https://dummyjson.com/image/i/products/1/2.jpg",
+            "https://dummyjson.com/image/i/products/1/3.jpg",
+            "https://dummyjson.com/image/i/products/1/4.jpg",
             "https://dummyjson.com/image/i/products/21/3.jpg"
           ]
         },
@@ -432,6 +443,9 @@ class Photos_Api {
           "images": [
             "https://dummyjson.com/image/i/products/22/1.jpg",
             "https://dummyjson.com/image/i/products/22/2.jpg",
+            "https://dummyjson.com/image/i/products/1/2.jpg",
+            "https://dummyjson.com/image/i/products/1/3.jpg",
+            "https://dummyjson.com/image/i/products/1/4.jpg",
             "https://dummyjson.com/image/i/products/22/3.jpg"
           ]
         },

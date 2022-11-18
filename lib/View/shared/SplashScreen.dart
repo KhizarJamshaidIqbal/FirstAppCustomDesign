@@ -18,7 +18,7 @@ class _Splash_ScreenState extends State<Splash_Screen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 5),
+        Duration(seconds: 4),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => Authentication())));
   }
@@ -34,19 +34,8 @@ class _Splash_ScreenState extends State<Splash_Screen> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 450.0, left: 6.0),
-            child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Authentication()),
-                  );
-                },
-                child: Image(image: AssetImage("Images/KSocial.png"))),
+            child: Image(image: AssetImage("Images/KSocial.png")),
           ),
-          SizedBox(
-            height: 50.0,
-          )
         ],
       ),
     );

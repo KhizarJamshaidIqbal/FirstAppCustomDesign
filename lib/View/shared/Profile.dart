@@ -13,7 +13,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  var _currentindex = 2;
+  final _currentindex = 2;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

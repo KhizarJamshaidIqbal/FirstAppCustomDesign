@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:static_api/View/shared/Profile.dart';
 import 'package:static_api/View/shared/Search.dart';
+import 'package:static_api/View/shared/profile_pic_window.dart';
 
 import '../../api/static_api.dart';
-import '../components/BottomNavigationbar.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -20,35 +20,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var _currentindex = 0;
-    var value = [0, 1, 2];
-    bool option = true;
+    // var value = [0, 1, 2];
+    // bool option = true;
     dynamic list = Photos_Api.datalist[0]["products"];
     return SafeArea(
       child: Scaffold(
-        // appBar: AppBar(
-        //   title: Text("Home"),
-        //   backgroundColor: Colors.red,
-        //   centerTitle: true,
-        //   leading: GestureDetector(
-        //     onTap: () {},
-        //     child: Icon(Icons.home),
-        //   ),
-        //   actions: [
-        //     InkWell(
-        //         onTap: () {
-        //           Navigator.push(
-        //               context,
-        //               MaterialPageRoute(
-        //                 builder: (context) => LoginScreen(),
-        //               ));
-        //         },
-        //         child: Icon(Icons.logout)),
-        //     Padding(
-        //       padding: const EdgeInsets.only(right: 5.0, left: 5.0),
-        //       child: Icon(Icons.more_vert),
-        //     )
-        //   ],
-        // ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 9),
@@ -61,8 +37,17 @@ class _HomeState extends State<Home> {
                     children: [
                       SizedBox(
                         height: 100.0,
-                        child: Image(
-                          image: AssetImage("Images/KSocial.png"),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Profile(),
+                                ));
+                          },
+                          child: Image(
+                            image: AssetImage("Images/KSocial.png"),
+                          ),
                         ),
                       ),
                       Padding(
@@ -91,11 +76,21 @@ class _HomeState extends State<Home> {
                                 child: CircleAvatar(
                                   radius: 52,
                                   backgroundColor: Colors.redAccent,
-                                  child: CircleAvatar(
-                                    radius: 50,
-                                    backgroundColor: Colors.red,
-                                    backgroundImage: NetworkImage(
-                                        "${list[index]["thumbnail"]}"),
+                                  child: InkWell(
+                                    onTap: (() {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                profile_pic_window(),
+                                          ));
+                                    }),
+                                    child: CircleAvatar(
+                                      radius: 50,
+                                      backgroundColor: Colors.red,
+                                      backgroundImage: NetworkImage(
+                                          "${list[index]["thumbnail"]}"),
+                                    ),
                                   ),
                                 ),
                               ),
