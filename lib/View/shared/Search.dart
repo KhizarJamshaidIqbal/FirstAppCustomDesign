@@ -37,7 +37,7 @@ class _SearchState extends State<Search> {
                     enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.red),
                         borderRadius: BorderRadius.circular(30.0)),
-                    hintText: '  Search Now...',
+                    hintText: '  Search Now',
                     hintStyle: TextStyle(
                         color: Colors.white, fontStyle: FontStyle.italic),
                     suffixIcon: Icon(

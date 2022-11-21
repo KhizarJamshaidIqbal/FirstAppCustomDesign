@@ -20,8 +20,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var _currentindex = 0;
-    // var value = [0, 1, 2];
-    // bool option = true;
     dynamic list = Photos_Api.datalist[0]["products"];
     return SafeArea(
       child: Scaffold(
