@@ -122,6 +122,7 @@ class _HomeState extends State<Home> {
                           ),
                           SizedBox(
                             height: 300,
+                            width: double.infinity,
                             child: Column(
                               children: [
                                 Expanded(
@@ -131,7 +132,8 @@ class _HomeState extends State<Home> {
                                     itemBuilder: (context, index2) {
                                       return Image(
                                           image: NetworkImage(
-                                              "${list[index]["images"][index2]}"));
+                                              "${list[index]["images"][index2]}"),
+                                          fit: BoxFit.cover);
                                     },
                                   ),
                                 ),

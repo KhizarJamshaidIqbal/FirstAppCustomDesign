@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:static_api/api/static_api.dart';
-
+import 'package:static_api/controller/listpovider.dart';
 import 'Home.dart';
 import 'Profile.dart';
 
@@ -16,7 +16,22 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   final _currentindex = 1;
-  dynamic list = Photos_Api.datalist[0]["products"];
+  dynamic displayList = List.from(list);
+  void UpdateList(String value) {
+    try {
+      setState(() {
+        displayList = list
+            .where((element) =>
+                element["description"]
+                    .toLowerCase()
+                    .contain(value.toLowerCase()) ||
+                element["title"].toLowerCase().contain(value.toLowerCase()))
+            .toList();
+      });
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +45,9 @@ class _SearchState extends State<Search> {
                 height: 12.0,
               ),
               TextField(
+                onChanged: (value) {
+                  UpdateList(value);
+                },
                 decoration: InputDecoration(
                     fillColor: Colors.red,
                     filled: true,
@@ -52,7 +70,7 @@ class _SearchState extends State<Search> {
               ),
               Expanded(
                 child: ListView.builder(
-                  itemCount: list.length,
+                  itemCount: displayList.length,
                   itemBuilder: (context, index) {
                     return Card(
                       shape: RoundedRectangleBorder(
@@ -65,22 +83,22 @@ class _SearchState extends State<Search> {
                       child: ListTile(
                         leading: CircleAvatar(
                           radius: 20.0,
-                          backgroundImage:
-                              NetworkImage("${list[index]["thumbnail"]}"),
+                          backgroundImage: NetworkImage(
+                              "${displayList[index]["thumbnail"]}"),
                           backgroundColor: Colors.white,
                         ),
                         title: Text(
-                          "${list[index]["title"]}",
+                          "${displayList[index]["title"]}",
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
-                          "${list[index]["description"]}",
+                          "${displayList[index]["description"]}",
                           style: TextStyle(
                               color: Colors.black, fontStyle: FontStyle.normal),
                         ),
                         trailing: Text(
-                          "${list[index]["rating"]}",
+                          "${displayList[index]["rating"]}",
                           style: TextStyle(
                               color: Colors.yellow,
                               fontStyle: FontStyle.italic),
@@ -93,53 +111,6 @@ class _SearchState extends State<Search> {
             ],
           ),
         ),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   backgroundColor: Colors.red,
-        //   selectedItemColor: Colors.black,
-        //   unselectedItemColor: Colors.white,
-        //   // ignore: prefer_const_literals_to_create_immutables
-        //   items: [
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.home),
-        //       label: 'Home',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.search),
-        //       label: 'Search',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.perm_identity_sharp),
-        //       label: 'Profile',
-        //     ),
-        //   ],
-        //   currentIndex: _currentindex,
-        //   onTap: (value) {
-        //     setState(() {
-        //       switch (value) {
-        //         case 0: // code to be executed if n = 0;
-        //           Navigator.push(
-        //               context,
-        //               MaterialPageRoute(
-        //                 builder: (context) => Home(),
-        //               ));
-        //           break;
-        //         case 1: // code to be executed if n = 1;
-        //           Navigator.push(
-        //               context,
-        //               MaterialPageRoute(
-        //                 builder: (context) => Search(),
-        //               ));
-        //           break;
-        //         case 2: //  // code to be executed if n = 2;
-        //           Navigator.push(
-        //               context,
-        //               MaterialPageRoute(
-        //                 builder: (context) => Profile(),
-        //               ));
-        //       }
-        //     });
-        //   },
-        // ),
       ),
     );
   }
