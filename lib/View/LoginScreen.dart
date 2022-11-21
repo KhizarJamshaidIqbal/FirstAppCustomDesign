@@ -11,6 +11,7 @@ import 'package:static_api/View/shared/Home.dart';
 
 import '../api/card_api.dart';
 import 'SignUpScreen.dart';
+import 'components/BottomNavigationbar.dart';
 import 'components/Customtexfield.dart';
 import 'components/lotiecard.dart';
 
@@ -119,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Home(),
+                                builder: (context) => BottomNavigationbar(),
                               ));
                         },
                         child: Text(

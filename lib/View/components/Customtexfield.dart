@@ -20,6 +20,11 @@ class customtextfield extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.red,
+            ),
+            borderRadius: BorderRadius.circular(12.0)),
         enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red),
             borderRadius: BorderRadius.circular(12.0)),

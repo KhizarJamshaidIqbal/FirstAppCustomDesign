@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:static_api/View/shared/Profile.dart';
-import 'package:static_api/View/shared/Search.dart';
 import 'package:static_api/View/shared/profile_pic_window.dart';
 
 import '../../api/static_api.dart';
@@ -19,7 +18,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    var _currentindex = 0;
     dynamic list = Photos_Api.datalist[0]["products"];
     return SafeArea(
       child: Scaffold(
@@ -80,7 +78,9 @@ class _HomeState extends State<Home> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                profile_pic_window(),
+                                                profile_pic_window(
+                                              imgeUrl: list[index]["thumbnail"],
+                                            ),
                                           ));
                                     }),
                                     child: CircleAvatar(
@@ -170,53 +170,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-        ),
-        // bottomNavigationBar: BottomNavigationbar(),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.red,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.white,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.perm_identity_sharp),
-              label: 'Profile',
-            ),
-          ],
-          currentIndex: _currentindex,
-          onTap: (value) {
-            setState(() {
-              switch (value) {
-                case 0: // code to be executed if n = 0;
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Home(),
-                      ));
-                  break;
-                case 1: // code to be executed if n = 1;
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Search(),
-                      ));
-                  break;
-                case 2: //  // code to be executed if n = 2;
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Profile(),
-                      ));
-              }
-            });
-          },
         ),
       ),
     );

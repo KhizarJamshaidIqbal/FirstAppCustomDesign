@@ -116,7 +116,7 @@ class _AuthenticationState extends State<Authentication> {
                                       borderRadius:
                                           BorderRadius.circular(12.0))),
                               onPressed: () {
-                                Navigator.push(
+                                Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) => LoginScreen(),
@@ -136,7 +136,7 @@ class _AuthenticationState extends State<Authentication> {
                           height: Height * 0.2 / 3,
                           child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => SignUpScreen(),

@@ -1,4 +1,4 @@
-// ignore_for_file: implementation_imports, camel_case_types, prefer_const_constructors, prefer_typing_uninitialized_variables, prefer_const_literals_to_create_immutables
+// ignore_for_file: implementation_imports, camel_case_types, prefer_const_constructors, prefer_typing_uninitialized_variables, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import '../../api/static_api.dart';
 
 class profile_pic_window extends StatefulWidget {
-  const profile_pic_window({super.key});
+  profile_pic_window({super.key, required this.imgeUrl});
+  String imgeUrl;
 
   @override
   State<profile_pic_window> createState() => _profile_pic_windowState();
@@ -104,7 +105,7 @@ class _profile_pic_windowState extends State<profile_pic_window> {
                 height: 350,
                 color: Colors.red,
                 child: Image(
-                    image: AssetImage("Images/blue.jpg"), fit: BoxFit.cover),
+                    image: NetworkImage(widget.imgeUrl), fit: BoxFit.cover),
               ),
             ),
             Padding(
