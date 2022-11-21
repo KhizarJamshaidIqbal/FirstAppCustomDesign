@@ -1,11 +1,9 @@
-// ignore_for_file: implementation_imports, file_names, prefer_const_constructors, use_function_type_syntax_for_parameters, unused_local_variable, no_leading_underscores_for_local_identifiers, unused_field, unused_import
+// ignore_for_file: implementation_imports, file_names, prefer_const_constructors, use_function_type_syntax_for_parameters, unused_local_variable, no_leading_underscores_for_local_identifiers, unused_field, unused_import, avoid_print, non_constant_identifier_names
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:static_api/api/static_api.dart';
 import 'package:static_api/controller/listpovider.dart';
-import 'Home.dart';
-import 'Profile.dart';
 
 class Search extends StatefulWidget {
   const Search({super.key});
