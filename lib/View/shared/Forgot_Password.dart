@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
-import 'package:static_api/View/Authentication.dart';
-import 'package:static_api/View/LoginScreen.dart';
+import 'package:static_api/View/OnBoardingScreen/Authentication.dart';
+import 'package:static_api/View/shared/LoginScreen.dart';
 
-import '../SignUpScreen.dart';
+import 'SignUpScreen.dart';
 import '../components/Customtexfield.dart';
 
 class Forgot_Password extends StatefulWidget {

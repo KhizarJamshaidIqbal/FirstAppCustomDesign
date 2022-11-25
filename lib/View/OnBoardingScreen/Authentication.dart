@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
-import 'package:static_api/View/LoginScreen.dart';
-import 'package:static_api/View/SignUpScreen.dart';
+import 'package:static_api/View/shared/LoginScreen.dart';
+import 'package:static_api/View/shared/SignUpScreen.dart';
 import 'package:static_api/View/components/lotiecard.dart';
 
-import '../api/card_api.dart';
+import '../../api/card_api.dart';
 
 class Authentication extends StatefulWidget {
   const Authentication({super.key});

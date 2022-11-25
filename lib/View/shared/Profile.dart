@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:static_api/View/shared/Forgot_Password.dart';
 import 'package:static_api/View/shared/Home.dart';
+import 'package:static_api/View/shared/Map.dart';
 import 'package:static_api/View/shared/profile_pic_window.dart';
 
 import 'Search.dart';
@@ -38,9 +40,18 @@ class _ProfileState extends State<Profile> {
               child: CircleAvatar(
                 backgroundColor: Colors.white,
                 radius: 70,
-                child: CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("Images/blue.jpg"),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MyFirstMap(),
+                        ));
+                  },
+                  child: CircleAvatar(
+                    radius: 65,
+                    backgroundImage: AssetImage("Images/blue.jpg"),
+                  ),
                 ),
               ),
             )

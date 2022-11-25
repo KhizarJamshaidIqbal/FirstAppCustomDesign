@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import '../Authentication.dart';
+import '../OnBoardingScreen/Authentication.dart';
 
 class Splash_Screen extends StatefulWidget {
   const Splash_Screen({super.key});

@@ -5,15 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
-import 'package:static_api/View/Authentication.dart';
+import 'package:static_api/View/OnBoardingScreen/Authentication.dart';
 import 'package:static_api/View/shared/Forgot_Password.dart';
 import 'package:static_api/View/shared/Home.dart';
 
-import '../api/card_api.dart';
+import '../../api/card_api.dart';
 import 'SignUpScreen.dart';
-import 'components/BottomNavigationbar.dart';
-import 'components/Customtexfield.dart';
-import 'components/lotiecard.dart';
+import '../components/BottomNavigationbar.dart';
+import '../components/Customtexfield.dart';
+import '../components/lotiecard.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

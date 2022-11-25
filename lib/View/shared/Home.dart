@@ -98,7 +98,7 @@ class _HomeState extends State<Home> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 5, top: 5),
+                  padding: const EdgeInsets.only(bottom: 2, top: 5),
                   child: Container(height: 0.1, color: Colors.black),
                 ),
                 Expanded(

@@ -73,14 +73,12 @@ class _SearchState extends State<Search> {
                     return Card(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0)),
-                      // key:
-                      // Valuekey(list[index]["id"]),
-                      color: Colors.red,
+                      color: index % 2 == 0 ? Colors.red : Colors.black,
                       elevation: 4,
                       margin: EdgeInsets.symmetric(vertical: 12.0),
                       child: ListTile(
                         leading: CircleAvatar(
-                          radius: 20.0,
+                          radius: 25.0,
                           backgroundImage: NetworkImage(
                               "${displayList[index]["thumbnail"]}"),
                           backgroundColor: Colors.white,
@@ -88,12 +86,16 @@ class _SearchState extends State<Search> {
                         title: Text(
                           "${displayList[index]["title"]}",
                           style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                              color:
+                                  index % 2 == 0 ? Colors.black : Colors.white,
+                              fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
                           "${displayList[index]["description"]}",
                           style: TextStyle(
-                              color: Colors.black, fontStyle: FontStyle.normal),
+                              color:
+                                  index % 2 == 0 ? Colors.black : Colors.white,
+                              fontStyle: FontStyle.normal),
                         ),
                         trailing: Text(
                           "${displayList[index]["rating"]}",

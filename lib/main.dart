@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
-import 'package:static_api/View/Authentication.dart';
+import 'package:static_api/View/OnBoardingScreen/Authentication.dart';
 
-import 'View/LoginScreen.dart';
+import 'View/shared/LoginScreen.dart';
 import 'View/components/BottomNavigationbar.dart';
-import 'View/shared/SplashScreen.dart';
+import 'View/SplashScreen/SplashScreen.dart';
 
 void main() {
   runApp(const MyApp());
