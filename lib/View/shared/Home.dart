@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) =>
+                                            builder: (context) =>//main cheze
                                                 profile_pic_window(
                                               imgeUrl: list[index]["thumbnail"],
                                             ),

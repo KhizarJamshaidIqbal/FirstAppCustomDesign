@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:static_api/View/OnBoardingScreen/Authentication.dart';
+import 'package:static_api/View/shared/Map.dart';
 
 import 'View/shared/LoginScreen.dart';
 import 'View/components/BottomNavigationbar.dart';
